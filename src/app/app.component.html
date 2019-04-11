@@ -1,0 +1,23 @@
+<h1> Select from dropdown to become user </h1>
+
+<h3> Instructors </h3>
+<ul>
+  <li *ngFor="let instructor of instructors">
+    <a href="/instructor/{{instructor.id}}/lessons">
+      {{ instructor.name }}
+    </a>
+  </li>
+</ul>
+
+<h3> Users </h3>
+<ul>
+  <li *ngFor="let user of users">
+    <a href="/user/{{user.id}}/lessons">
+      {{ user.name }}
+    </a>
+  </li>
+</ul>
+
+<hr>
+
+<router-outlet></router-outlet>
