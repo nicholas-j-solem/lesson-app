@@ -9,7 +9,7 @@ export class DataService {
   users: User[] = [
     { id: 1, name: 'Cody' },
     { id: 2, name: 'Nick' },
-    { id: 3, name: 'Phillip' }
+    { id: 3, name: 'Philip' }
   ]
 
   instructors: User[] = [
