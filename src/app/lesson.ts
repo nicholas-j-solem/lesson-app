@@ -3,6 +3,6 @@ export class Lesson {
   name: string;
   user_id: number;
   instructor_id: number;
-  start_time: Date;
-  end_time: Date;
+  start_time: number;
+  end_time: number;
 }

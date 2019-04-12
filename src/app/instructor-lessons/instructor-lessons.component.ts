@@ -13,6 +13,7 @@ export class InstructorLessonsComponent implements OnInit {
   instructor: User;
   instructor_id: number;
   lessons: Lesson[];
+  my_percentage: number = 100;
 
   constructor(
     private dataService: DataService,

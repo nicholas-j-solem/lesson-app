@@ -22,16 +22,16 @@ export class DataService {
       name: 'Small Group',
       user_id: 1,
       instructor_id: 1,
-      start_time: new Date(2019, 4, 10, 8),
-      end_time: new Date(2019, 4, 10, 13)
+      start_time: 8,
+      end_time: 15
     },
     {
       id: 2,
       name: 'Other Group',
       user_id: 2,
       instructor_id: 1,
-      start_time: new Date(2019, 4, 10, 8),
-      end_time: new Date(2019, 4, 10, 13)
+      start_time: 10,
+      end_time: 17
     }
   ]
 

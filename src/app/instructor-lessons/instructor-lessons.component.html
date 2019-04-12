@@ -1,6 +1,11 @@
-<ul>
-  <li *ngFor="let lesson of lessons">
-    Name: {{ lesson.name }}, Start: {{ lesson.start_time }}, End: {{ lesson.end_time }}
+<div class="row" *ngFor="let lesson of lessons">
+  <div [ngStyle]="{'width': ((lesson.start_time - 8) * (100 / (17 - 8))) + '%', height: '20px'}">
 
-  </li>
-</ul>
+  </div>
+
+  <div [ngStyle]="{'width': ((lesson.end_time - lesson.start_time) * (100 / (17 - 8))) + '%'}">
+    <div class="alert alert-primary" role="alert">
+      Start: {{ lesson.start_time }}, End: {{ lesson.end_time }}
+    </div>
+  </div>
+</div>
