@@ -1,0 +1,33 @@
+:host{
+    --primary: #38bd7a;
+    --shadow: 3px 3px 8px rgba(104, 104, 104, 0.8);
+    --border: thin solid rgba(97, 95, 95, 0.212);
+}
+
+ul{ list-style: none;}
+
+.wrapper{
+    background-color: var(--primary);
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.times{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: grid; 
+    grid-template-columns: repeat(10, 1fr); 
+    background-color: #ddd; 
+    font-size: large;
+    border: var(--border);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: var(--border);
+}
+
+.alert-primary{
+    border: var(--border);
+    box-shadow: var(--shadow);
+}

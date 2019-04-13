@@ -20,7 +20,7 @@ export class DataService {
     {
       id: 1,
       name: 'Small Group',
-      user_id: 1,
+      user_id: 3,
       instructor_id: 1,
       start_time: 8,
       end_time: 15
@@ -32,6 +32,14 @@ export class DataService {
       instructor_id: 1,
       start_time: 10,
       end_time: 17
+    },
+    {
+      id: 3,
+      name: 'Large Group',
+      user_id: 3,
+      instructor_id: 1,
+      start_time: 11,
+      end_time: 13
     }
   ]
 

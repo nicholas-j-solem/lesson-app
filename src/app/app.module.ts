@@ -7,12 +7,14 @@ import { UserLessonsComponent } from './user-lessons/user-lessons.component';
 import { InstructorLessonsComponent } from './instructor-lessons/instructor-lessons.component';
 
 import { DataService } from './data.service';
+import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserLessonsComponent,
-    InstructorLessonsComponent
+    InstructorLessonsComponent,
+    CalendarViewComponent
   ],
   imports: [
     BrowserModule,
