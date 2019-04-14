@@ -9,8 +9,7 @@ import { LessonsComponent } from './lessons/lessons.component';
 const routes: Routes = [
   // { path: 'user/:id/lessons', component: UserLessonsComponent },
   // { path: 'instructor/:id/lessons', component: InstructorLessonsComponent }
-  { path: 'user/:id/lessons', component: LessonsComponent },
-  { path: 'instructor/:id/lessons', component: LessonsComponent }
+  { path: ':group/:id/lessons', component: LessonsComponent },
 ];
 
 @NgModule({
