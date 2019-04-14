@@ -11,9 +11,7 @@ export class AppComponent {
   users: User[];
   instructors: User[];
 
-  constructor(
-    private dataService: DataService
-  ) {}
+  constructor( private dataService: DataService ) {}
 
   ngOnInit() {
     this.users = this.dataService.getUsers();
