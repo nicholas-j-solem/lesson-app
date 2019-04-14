@@ -8,13 +8,15 @@ import { InstructorLessonsComponent } from './instructor-lessons/instructor-less
 
 import { DataService } from './data.service';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
+import { LessonsComponent } from './lessons/lessons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserLessonsComponent,
     InstructorLessonsComponent,
-    CalendarViewComponent
+    CalendarViewComponent,
+    LessonsComponent
   ],
   imports: [
     BrowserModule,

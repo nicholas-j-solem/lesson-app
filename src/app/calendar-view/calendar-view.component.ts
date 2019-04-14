@@ -24,11 +24,11 @@ export class CalendarViewComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
 
-    let x = this.route.snapshot.url[0].path;
+    let group = this.route.snapshot.url[0].path;
 
-    if (x == 'instructor') {
+    if (group == 'instructor') {
       this.lessons = this.dataService.getLessonsForInstructorId(this.id);
-    } else if (x == 'user') {
+    } else if (group == 'user') {
       this.lessons = this.dataService.getLessonsForUserId(this.id);
     } else {
       console.log('eat my ass');
