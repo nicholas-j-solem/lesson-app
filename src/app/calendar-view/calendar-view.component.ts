@@ -11,7 +11,7 @@ import { Lesson } from '../lesson';
 })
 export class CalendarViewComponent implements OnInit {
   instructor: User;
-  instructor_id: number;
+  id: number;
   lessons: Lesson[];
   my_percentage: number = 100;
 
@@ -22,8 +22,19 @@ export class CalendarViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.instructor_id = this.route.snapshot.params['id'];
-    this.lessons = this.dataService.getLessonsForInstructorId(this.instructor_id);
+    this.id = this.route.snapshot.params['id'];
+
+    let x = this.route.snapshot.url[0].path;
+
+    if (x == 'instructor') {
+      this.lessons = this.dataService.getLessonsForInstructorId(this.id);
+    } else if (x == 'user') {
+      this.lessons = this.dataService.getLessonsForUserId(this.id);
+    } else {
+      console.log('eat my ass');
+
+    }
+    
   }
 
 }

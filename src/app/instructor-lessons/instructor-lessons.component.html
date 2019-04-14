@@ -1,4 +1,4 @@
-<div class="row" *ngFor="let lesson of lessons">
+<!-- <div class="row" *ngFor="let lesson of lessons">
   <div [ngStyle]="{'width': ((lesson.start_time - 8) * (100 / (17 - 8))) + '%', height: '20px'}">
 
   </div>
@@ -8,6 +8,13 @@
       Start: {{ lesson.start_time }}, End: {{ lesson.end_time }}
     </div>
   </div>
-</div>
+</div> -->
+
+<ul>
+  <li *ngFor="let lesson of lessons">
+    Name: {{ lesson.name }}, Start: {{ lesson.start_time }}, End: {{ lesson.end_time }}
+
+  </li>
+</ul>
 
 <app-calendar-view></app-calendar-view>
