@@ -30,9 +30,9 @@ export class DataService {
     // Check for overlaps on a per-instructor basis
     let overlaps = this.lessons.filter(function (x) {
       return (x.instructor_id == newLesson.instructor_id || x.user_id == newLesson.user_id) &&
-          ((  x.start_time <= newLesson.start_time && x.end_time >= newLesson.start_time)
-          || (x.start_time <= newLesson.end_time   && x.end_time >= newLesson.end_time)
-          || (x.start_time >= newLesson.start_time && x.end_time <= newLesson.end_time))
+          ((  x.start_time < newLesson.start_time && x.end_time > newLesson.start_time)
+          || (x.start_time < newLesson.end_time   && x.end_time > newLesson.end_time)
+          || (x.start_time > newLesson.start_time && x.end_time < newLesson.end_time))
         });
 
     // Console logging 

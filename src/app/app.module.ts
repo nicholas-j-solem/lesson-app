@@ -9,6 +9,8 @@ import { InstructorLessonsComponent } from './instructor-lessons/instructor-less
 import { DataService } from './data.service';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { LessonsComponent } from './lessons/lessons.component';
+import { NewLessonComponent } from './new-lesson/new-lesson.component';
+import {FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { LessonsComponent } from './lessons/lessons.component';
     UserLessonsComponent,
     InstructorLessonsComponent,
     CalendarViewComponent,
-    LessonsComponent
+    LessonsComponent,
+    NewLessonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
