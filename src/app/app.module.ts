@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserLessonsComponent } from './user-lessons/user-lessons.component';
-import { InstructorLessonsComponent } from './instructor-lessons/instructor-lessons.component';
 
 import { DataService } from './data.service';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
@@ -15,8 +13,6 @@ import {FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    UserLessonsComponent,
-    InstructorLessonsComponent,
     CalendarViewComponent,
     LessonsComponent,
     // NewLessonComponent
