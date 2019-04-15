@@ -17,7 +17,9 @@
 
     <div [ngStyle]="{'width': ((lesson.end_time - lesson.start_time) * (100 / (17 - 8))) + '%'}">
       <div class="alert alert-primary" role="alert">
-        Lesson: {{ lesson.name }} ({{lesson.start_time % 12}} - {{lesson.end_time % 12}})
+        Lesson: {{ lesson.name }}
+        ({{ timeDisplay(lesson.start_time) }}
+        - {{ timeDisplay(lesson.end_time) }})
       </div>
     </div>
   </div>

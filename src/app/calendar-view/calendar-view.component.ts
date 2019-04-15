@@ -32,4 +32,8 @@ export class CalendarViewComponent implements OnInit {
       this.lessons = this.dataService.getLessonsForUserId(this.id);
     }
   }
+
+  timeDisplay(time: number) {
+    return (time % 12 == 0 ? 12 : time % 12) + (time < 12 ? 'am' : 'pm')
+  }
 }
