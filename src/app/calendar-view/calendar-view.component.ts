@@ -30,11 +30,6 @@ export class CalendarViewComponent implements OnInit {
       this.lessons = this.dataService.getLessonsForInstructorId(this.id);
     } else if (group == 'user') {
       this.lessons = this.dataService.getLessonsForUserId(this.id);
-    } else {
-      console.log('eat my ass');
-
     }
-    
   }
-
 }

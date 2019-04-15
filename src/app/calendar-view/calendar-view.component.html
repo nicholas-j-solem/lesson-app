@@ -13,14 +13,12 @@
   </ul>
 
   <div class="row" *ngFor="let lesson of lessons" style="padding: 0 20px;">
-    <div [ngStyle]="{'width': ((lesson.start_time - 8) * (100 / (17 - 8))) + '%', height: '20px'}">
+    <div [ngStyle]="{'width': ((lesson.start_time - 8) * (100 / (17 - 8))) + '%', height: '20px'}"> </div>
+
+    <div [ngStyle]="{'width': ((lesson.end_time - lesson.start_time) * (100 / (17 - 8))) + '%'}">
+      <div class="alert alert-primary" role="alert">
+        Lesson: {{ lesson.name }} ({{lesson.start_time % 12}} - {{lesson.end_time % 12}})
       </div>
-      
-      <div [ngStyle]="{'width': ((lesson.end_time - lesson.start_time) * (100 / (17 - 8))) + '%'}">
-        <div class="alert alert-primary" role="alert">
-          Start: {{ lesson.start_time }}, End: {{ lesson.end_time }}
-        </div>
     </div>
   </div>
-
 </div>
