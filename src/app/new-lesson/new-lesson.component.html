@@ -1,0 +1,36 @@
+<button class="btn btn-info" (click)="toggleForm()">{{message}}</button>
+
+<div *ngIf="showForm">
+
+  <div class="form-group">
+    <label for="name">Lesson Name</label>
+    <input [(ngModel)]="lesson_name" type="text" class="form-control" id="name" required>
+  </div>
+  <div *ngIf="group=='instructor'" class="form-group">
+      <label for="students">Students Attending</label>
+      <select [(ngModel)]="lesson_u_id" class="form-control" multiple>
+        <option *ngFor="let student of students" id="students" value="{{student.id}}">{{student.name}}</option>
+      </select>
+    </div>
+
+    <div *ngIf="group=='user'" class="form-group">
+        <label for="instructor">Lesson Instructor</label>
+        <select [(ngModel)]="lesson_u_id" class="form-control">
+          <option *ngFor="let instructor of instructors" id="instructor" value="{{instructor.id}}">{{instructor.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+          <label for="start-time">Start Time</label>
+          <input [(ngModel)]="lesson_start_time" type="number" min="8" max="17" class="form-control" id="start-time" required>
+        </div>
+        <div class="form-group">
+            <label for="end-time">End Time</label>
+            <input [(ngModel)]="lesson_end_time" type="number" min="8" max="17" class="form-control" id="end-time" required>
+          </div>
+
+
+
+  <button (click)="newLesson()" type="submit" class="btn btn-success">Submit</button>
+
+</div>
+
