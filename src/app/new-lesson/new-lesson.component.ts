@@ -1,8 +1,8 @@
 import { Component, OnInit, NgModule} from '@angular/core';
-import { DataService } from 'lesson-app/src/app/data.service';
+import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lesson } from '../lesson';
-import { User } from 'lesson-app/src/app/user';
+import { User } from '../user';
 
 @Component({
   selector: 'app-new-lesson',
@@ -63,7 +63,7 @@ export class NewLessonComponent implements OnInit {
     }
     
     this.dataService.addLesson(newLesson.id, newLesson.name, newLesson.user_id, newLesson.instructor_id, newLesson.start_time, newLesson.end_time);
-    
+    console.log(this.dataService.getLessons());
   }
 
 }

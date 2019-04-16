@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { DataService } from './data.service';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { LessonsComponent } from './lessons/lessons.component';
-// import { NewLessonComponent } from './new-lesson/new-lesson.component';
+import { NewLessonComponent } from './new-lesson/new-lesson.component';
 import {FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -15,7 +15,7 @@ import {FormsModule } from '@angular/forms';
     AppComponent,
     CalendarViewComponent,
     LessonsComponent,
-    // NewLessonComponent
+    NewLessonComponent
   ],
   imports: [
     BrowserModule,
