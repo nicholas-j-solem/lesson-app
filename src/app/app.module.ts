@@ -3,23 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserLessonsComponent } from './user-lessons/user-lessons.component';
-import { InstructorLessonsComponent } from './instructor-lessons/instructor-lessons.component';
 
 import { DataService } from './data.service';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { LessonsComponent } from './lessons/lessons.component';
-import { NewLessonComponent } from './new-lesson/new-lesson.component';
+// import { NewLessonComponent } from './new-lesson/new-lesson.component';
 import {FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserLessonsComponent,
-    InstructorLessonsComponent,
     CalendarViewComponent,
     LessonsComponent,
-    NewLessonComponent
+    // NewLessonComponent
   ],
   imports: [
     BrowserModule,
