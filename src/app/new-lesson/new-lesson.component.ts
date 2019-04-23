@@ -1,21 +1,56 @@
-import { Component, OnInit, NgModule} from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lesson } from '../lesson';
 import { User } from '../user';
+import { style, state, trigger, transition, animate, stagger, query, sequence } from '@angular/animations';
 
 @Component({
   selector: 'app-new-lesson',
   templateUrl: './new-lesson.component.html',
-  styleUrls: ['./new-lesson.component.css']
+  styleUrls: ['./new-lesson.component.css'],
+  animations: [
+    trigger('showCalendar', [
+      state('closed', style({
+        height: '0px',
+        opacity: 0,
+      })),
+      state('open', style({
+        height: '*',
+        opacity: 1,
+      })),
+
+      transition('closed => open', [
+        sequence([
+          animate('500ms ease-in', style({
+            position: 'relative',
+            height: '*',
+          })),
+          animate('500ms ease-in', style({
+            opacity: 1,
+          }))
+        ])
+      ]),
+      transition('open => closed', [
+        style({
+          opacity: 0,
+          height: '*',
+        }),
+        animate('500ms ease-in', style({
+          position: 'relative',
+          height: '0px',
+        }))
+      ]),
+    ]),
+  ]
 })
 export class NewLessonComponent implements OnInit {
-  
+
   group: string;
 
 
   showForm = false;
-  message = "Add a New Lesson";
+  message = 'Add a New Lesson';
   students: User[];
   instructors: User[];
 
@@ -23,7 +58,7 @@ export class NewLessonComponent implements OnInit {
     private dataService: DataService,
     private route: ActivatedRoute
   ) { }
-  
+
 
 
   lesson_id: number;
@@ -61,7 +96,7 @@ export class NewLessonComponent implements OnInit {
       newLesson.instructor_id = this.lesson_u_id;
       newLesson.user_id = u_id;
     }
-    
+
     this.dataService.addLesson(newLesson.id, newLesson.name, newLesson.user_id, newLesson.instructor_id, newLesson.start_time, newLesson.end_time);
     console.log(this.dataService.getLessons());
   }

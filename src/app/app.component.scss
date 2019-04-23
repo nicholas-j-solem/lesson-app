@@ -1,0 +1,19 @@
+.user-list{
+    list-style-type: none;
+    // list-style-image:  url('/src/assets/board-beginner.png');
+}
+
+.user-button{
+    margin: .2em 0;
+    background-color: rgb(65, 153, 225);
+    color: white;
+    fill-opacity: 60%;
+}
+.user-button:hover{
+    background-color: rgb(49, 119, 175);
+}
+h2{
+    color: white;
+    text-shadow: -1px 0 rgb(88, 88, 88), 0 1px rgb(88, 88, 88), 1px 0 rgb(88, 88, 88), 0 -1px rgb(88, 88, 88);
+
+}

@@ -1,0 +1,16 @@
+#inp{
+  background-color:gray;
+}
+#name{
+  background-color:rgb(228, 228, 228);
+}
+#start-time{
+  background-color:rgb(228, 228, 228);
+}
+#start-time:has{
+  background-color:rgb(206, 255, 225);
+
+}
+  #end-time{
+  background-color:rgb(228, 228, 228);
+}

@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lesson } from '../lesson';
-
+import { state, style, transition, animate } from '@angular/animations';
 @Component({
   selector: 'app-lessons',
   templateUrl: './lessons.component.html',
-  styleUrls: ['./lessons.component.scss']
+  styleUrls: ['./lessons.component.scss'],
 })
 export class LessonsComponent implements OnInit {
   id: number;
   group: string;
   lessons: Lesson[];
+  calendarActive = false;
 
   constructor(
     private dataService: DataService,
@@ -26,6 +27,8 @@ export class LessonsComponent implements OnInit {
     } else if (this.group = 'user') {
       this.lessons = this.dataService.getLessonsForUserId(this.id);
     }
-    
+  }
+  ToggleCalendar(){
+    this.calendarActive = !this.calendarActive;
   }
 }

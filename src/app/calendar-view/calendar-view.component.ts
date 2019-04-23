@@ -3,11 +3,17 @@ import { User } from '../user';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lesson } from '../lesson';
+import { trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-calendar-view',
   templateUrl: './calendar-view.component.html',
-  styleUrls: ['./calendar-view.component.css']
+  styleUrls: ['./calendar-view.component.css'],
+  animations: [
+trigger('fadeIn', [
+
+])
+  ]
 })
 export class CalendarViewComponent implements OnInit {
   instructor: User;
