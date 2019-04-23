@@ -1,16 +1,46 @@
-#inp{
-  background-color:gray;
+#inp {
+  background-color: gray;
 }
-#name{
-  background-color:rgb(228, 228, 228);
-}
-#start-time{
-  background-color:rgb(228, 228, 228);
-}
-#start-time:has{
-  background-color:rgb(206, 255, 225);
 
+#name {
+  background-color: rgb(228, 228, 228);
 }
-  #end-time{
-  background-color:rgb(228, 228, 228);
+
+#instructor {
+  background-color: rgb(228, 228, 228);
+}
+
+#students {
+  background-color: rgb(228, 228, 228);
+}
+
+#start-time {
+  background-color: rgb(228, 228, 228);
+}
+
+#end-time {
+  background-color: rgb(228, 228, 228);
+}
+
+#name:valid {
+  background-color: rgb(206, 255, 225);
+}
+
+#instructor:valid {
+  background-color: rgb(206, 255, 225);
+}
+
+#students:valid {
+  background-color: rgb(206, 255, 225);
+}
+
+#start-time:valid {
+  background-color: rgb(206, 255, 225);
+}
+
+#end-time:valid {
+  background-color: rgb(206, 255, 225);
+}
+#end-time:invalid {
+  background-color: rgb(255, 206, 206);
 }

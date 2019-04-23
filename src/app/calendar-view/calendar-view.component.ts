@@ -9,18 +9,12 @@ import { trigger } from '@angular/animations';
   selector: 'app-calendar-view',
   templateUrl: './calendar-view.component.html',
   styleUrls: ['./calendar-view.component.css'],
-  animations: [
-trigger('fadeIn', [
-
-])
-  ]
 })
 export class CalendarViewComponent implements OnInit {
   instructor: User;
   id: number;
   lessons: Lesson[];
   my_percentage: number = 100;
-
 
   constructor(
     private dataService: DataService,

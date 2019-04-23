@@ -9,9 +9,11 @@ ul{ list-style: none;}
     text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
     border-right:  .1em solid rgba(104, 104, 104, 0.8);
     /* background: -webkit-linear-gradient(left, #1e5799 0%,#2989d8 23%,#d9dfe2 100%);  */
-    margin-right: .1em;
+    /* margin-right: .1em; */
+  /* width: 10%; */
+
     font-weight: bolder;
-    text-align: left;
+    text-align: center;
 }
 .wrapper{
     background-color: var(--primary);
@@ -22,7 +24,9 @@ ul{ list-style: none;}
 }
 
 .times{
-    /* align-content: stretch; */
+  /* position: static; */
+
+    padding: 0em;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     display: grid;
@@ -30,7 +34,6 @@ ul{ list-style: none;}
     /* background: -webkit-linear-gradient(left, #1e5799 0%,#2989d8 23%,#d9dfe2 100%);  */
     background-color: #ddd;
     font-size: large;
-    border: var(--border);
     padding-top: 10px;
     padding-bottom: 10px;
     border: var(--border);

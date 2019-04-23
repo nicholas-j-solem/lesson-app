@@ -2,30 +2,32 @@
   <img id="header-img" src="/src/assets/Banner.png">
   <h2> Select from dropdown to become user </h2>
 
-<h3> Instructors </h3>
-<ul>
-  <li class="user-list" *ngFor="let instructor of instructors">
-    <a href="/instructor/{{instructor.id}}/lessons">
-      <button class="btn user-button">
+  <h3> Instructors </h3>
+  <ul>
+    <li class="user-list" *ngFor="let instructor of instructors">
+      <a href="/instructor/{{instructor.id}}/lessons">
+        <button class="btn user-button">
           {{ instructor.name }}
         </button>
-    </a>
-  </li>
-</ul>
+      </a>
+    </li>
+  </ul>
 
-<h3> Users </h3>
-<ul>
-  <li class="user-list" *ngFor="let user of users">
-    <a href="/user/{{user.id}}/lessons" >
-      <button class="btn user-button">
-        {{ user.name }}
-      </button>
-    </a>
-  </li>
-</ul>
+  <h3> Users </h3>
+  <ul>
+    <!-- <div [@routeAnimations]="prepareRoute(outlet)"> -->
 
-<hr>
-<div style="margin: 10px;">
-  <!-- <app-lessons></app-lessons> -->
-  <router-outlet> </router-outlet>
-</div>
+      <li class="user-list" *ngFor="let user of users">
+        <a href="/user/{{user.id}}/lessons">
+          <button class="btn user-button">
+            {{ user.name }}
+          </button>
+        </a>
+      </li>
+    <!-- </div> -->
+  </ul>
+  <hr>
+  <div style="margin: 10px;">
+    <!-- <app-lessons></app-lessons> -->
+    <router-outlet #outlet="outlet"> </router-outlet>
+  </div>

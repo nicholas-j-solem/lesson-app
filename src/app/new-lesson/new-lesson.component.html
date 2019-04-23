@@ -8,7 +8,7 @@
     </div>
     <div *ngIf="group=='instructor'" class="form-group">
       <label for="students">Students Attending</label>
-      <select [(ngModel)]="lesson_u_id" class="form-control" multiple>
+      <select [(ngModel)]="lesson_u_id" class="form-control" multiple required>
         <option *ngFor="let student of students" id="students" value="{{student.id}}">{{student.name}}</option>
       </select>
     </div>
@@ -22,14 +22,16 @@
     </div>
     <div class="form-group">
       <label for="start-time">Start Time</label>
-      <input [(ngModel)]="lesson_start_time" type="number" min="8" max="17" class="form-control" id="start-time"
+      <input [(ngModel)]="lesson_start_time" type="number" min="8" max="16" class="form-control" id="start-time"
         required>
     </div>
     <div class="form-group">
       <label for="end-time">End Time</label>
       <input [(ngModel)]="lesson_end_time" type="number" min="8" max="17" class="form-control" id="end-time" required>
     </div>
-
+    <div *ngIf="!validateLessonTime()">
+      <p>End time must be later than start time!</p>
+    </div>
     <button (click)="newLesson()" type="submit" class="btn btn-success">Submit</button>
 
   </div>

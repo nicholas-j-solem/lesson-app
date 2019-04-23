@@ -6,11 +6,15 @@
 .user-button{
     margin: .2em 0;
     background-color: rgb(65, 153, 225);
+    font-weight: bold;
     color: white;
     fill-opacity: 60%;
 }
 .user-button:hover{
     background-color: rgb(49, 119, 175);
+}
+.user-button:active{
+  background-color: rgb(49, 119, 175);
 }
 h2{
     color: white;

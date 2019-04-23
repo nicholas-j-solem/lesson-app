@@ -10,6 +10,7 @@ import {
   // ...
 } from '@angular/animations';
 import { slideInAnimation } from './animations';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,7 +23,7 @@ import { slideInAnimation } from './animations';
         style({ transform: 'translateX(-100%)' }),
         animate(1000)
       ]),
-      transition('* => void', [
+        transition('* => void', [
         animate(1000, style({ transform: 'translateX(100%)' }))
       ])
     ])
@@ -38,5 +39,8 @@ export class AppComponent {
   ngOnInit() {
     this.users = this.dataService.getUsers();
     this.instructors = this.dataService.getInstructors();
+  }
+  prepareRoute(outlet: RouterOutlet){
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }
