@@ -1,23 +1,41 @@
-.user-list{
-    list-style-type: none;
-    // list-style-image:  url('/src/assets/board-beginner.png');
+.user-list.instructor {
+  flex-grow: inherit;
+  border-radius: 10px;
+  width: 10%;
+  list-style-type: none;
 }
 
-.user-button{
-    margin: .2em 0;
-    background-color: rgb(65, 153, 225);
-    font-weight: bold;
-    color: white;
-    fill-opacity: 60%;
+.user-list {
+  flex-grow: inherit;
+  border-radius: 10px;
+  width: 10%;
+  list-style-type: none;
+  margin-bottom: .5em;
 }
-.user-button:hover{
-    background-color: rgb(49, 119, 175);
+
+.user-list:hover {
+  background-color: rgba(49, 119, 175, .6);
 }
-.user-button:active{
+
+.user-button {
+  margin-top: .2em;
+  background-color: rgb(65, 153, 225);
+  font-weight: bold;
+  color: white;
+  fill-opacity: 60%;
+  overflow: auto;
+}
+
+.user-button:hover {
   background-color: rgb(49, 119, 175);
 }
-h2{
-    color: white;
-    text-shadow: -1px 0 rgb(88, 88, 88), 0 1px rgb(88, 88, 88), 1px 0 rgb(88, 88, 88), 0 -1px rgb(88, 88, 88);
+
+.user-button:active {
+  background-color: rgb(49, 119, 175);
+}
+
+h2 {
+  color: white;
+  text-shadow: -1px 0 rgb(88, 88, 88), 0 1px rgb(88, 88, 88), 1px 0 rgb(88, 88, 88), 0 -1px rgb(88, 88, 88);
 
 }

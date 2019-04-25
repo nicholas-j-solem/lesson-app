@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from './user';
+import { User, UserLevel, UserType } from './user';
 import { DataService } from './data.service';
 import {
   trigger,
@@ -32,6 +32,8 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   users: User[];
   instructors: User[];
+  userType = UserType;
+  userLevel = UserLevel;
   headerURL: '/src/assets/Banner.png';
 
   constructor(private dataService: DataService) { }

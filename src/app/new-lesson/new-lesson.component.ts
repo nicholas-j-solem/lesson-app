@@ -2,7 +2,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lesson } from '../lesson';
-import { User } from '../user';
+import { User, UserLevel, UserType } from '../user';
 import { style, state, trigger, transition, animate, sequence } from '@angular/animations';
 
 @Component({
@@ -49,7 +49,7 @@ import { style, state, trigger, transition, animate, sequence } from '@angular/a
 export class NewLessonComponent implements OnInit {
 
   group: string;
-
+  userLevel = UserLevel;
 
   showForm = false;
   message = 'Add a New Lesson';

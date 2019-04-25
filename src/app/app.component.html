@@ -1,29 +1,57 @@
-  <!-- <img id="header-img" [src]="headerURL"> -->
-  <img id="header-img" src="/src/assets/Banner.png">
-  <h2> Select from dropdown to become user </h2>
+  <img id="banner" src="https://imgur.com/7nx905t.png">
+  <h2> Select from list to become user </h2>
 
   <h3> Instructors </h3>
   <ul>
-    <li class="user-list" *ngFor="let instructor of instructors">
+    <li class="user-list instructor" *ngFor="let instructor of instructors">
       <a href="/instructor/{{instructor.id}}/lessons">
-        <button class="btn user-button">
-          {{ instructor.name }}
-        </button>
+        <span [ngSwitch]="instructor.level">
+          <div *ngSwitchCase="userLevel.Beginner">
+            <img class="skill-level-icon" src="https://imgur.com/whGTBlE.png" alt="">
+          </div>
+          <div *ngSwitchCase="userLevel.Intermediate">
+            <img class="skill-level-icon" src="https://imgur.com/SXE1jMx.png" alt="">
+          </div>
+          <div *ngSwitchCase="userLevel.Advanced">
+            <img class="skill-level-icon" src="https://imgur.com/tZ17gXI.png" alt="">
+          </div>
+          <div *ngSwitchCase="userLevel.Expert">
+            <img class="skill-level-icon" src="https://imgur.com/QhsbQBY.png" alt="">
+          </div>
+          <p *ngSwitchDefault>
+          </p>
+          <button class="btn user-button">
+            {{ instructor.name }}
+          </button>
+        </span>
       </a>
     </li>
   </ul>
-
   <h3> Users </h3>
   <ul>
-    <!-- <div [@routeAnimations]="prepareRoute(outlet)"> -->
-
-      <li class="user-list" *ngFor="let user of users">
-        <a href="/user/{{user.id}}/lessons">
+    <li class="user-list" *ngFor="let user of users">
+      <a href="/user/{{user.id}}/lessons">
+        <span [ngSwitch]="user.level">
+          <div *ngSwitchCase="userLevel.Beginner">
+            <img class="skill-level-icon" src="https://imgur.com/whGTBlE.png" alt="">
+          </div>
+          <div *ngSwitchCase="userLevel.Intermediate">
+            <img class="skill-level-icon" src="https://imgur.com/SXE1jMx.png" alt="">
+          </div>
+          <div *ngSwitchCase="userLevel.Advanced">
+            <img class="skill-level-icon" src="https://imgur.com/tZ17gXI.png" alt="">
+          </div>
+          <div *ngSwitchCase="userLevel.Expert">
+            <img class="skill-level-icon" src="https://imgur.com/QhsbQBY.png" alt="">
+          </div>
+          <div *ngSwitchDefault>
+          </div>
           <button class="btn user-button">
             {{ user.name }}
           </button>
-        </a>
-      </li>
+        </span>
+      </a>
+    </li>
     <!-- </div> -->
   </ul>
   <hr>
