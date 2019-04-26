@@ -10,7 +10,7 @@ import { trigger } from '@angular/animations';
   templateUrl: './calendar-view.component.html',
   styleUrls: ['./calendar-view.component.css'],
 })
-export class CalendarViewComponent implements OnInit {
+export class CalendarViewComponent {
   @Input() lessons: Lesson[];
   instructor: User;
   id: number;

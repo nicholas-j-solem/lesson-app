@@ -2,59 +2,45 @@
   <h2> Select from list to become user </h2>
 
   <h3> Instructors </h3>
-  <ul>
-    <li class="user-list instructor" *ngFor="let instructor of instructors">
-      <a href="/instructor/{{instructor.id}}/lessons">
-        <span [ngSwitch]="instructor.level">
-          <div *ngSwitchCase="userLevel.Beginner">
-            <img class="skill-level-icon" src="https://imgur.com/whGTBlE.png" alt="">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-1" *ngFor="let instructor of instructors">
+        <a href="/instructor/{{instructor.id}}/lessons">
+          <div [ngSwitch]="instructor.level">
+            <img *ngSwitchCase="userLevel.Beginner" class="img-fluid" src="https://imgur.com/whGTBlE.png" alt="">
+            <img *ngSwitchCase="userLevel.Intermediate" class="img-fluid" src="https://imgur.com/SXE1jMx.png" alt="">
+            <img *ngSwitchCase="userLevel.Advanced" class="img-fluid" src="https://imgur.com/tZ17gXI.png" alt="">
+            <img *ngSwitchCase="userLevel.Expert" class="img-fluid" src="https://imgur.com/QhsbQBY.png" alt="">
           </div>
-          <div *ngSwitchCase="userLevel.Intermediate">
-            <img class="skill-level-icon" src="https://imgur.com/SXE1jMx.png" alt="">
-          </div>
-          <div *ngSwitchCase="userLevel.Advanced">
-            <img class="skill-level-icon" src="https://imgur.com/tZ17gXI.png" alt="">
-          </div>
-          <div *ngSwitchCase="userLevel.Expert">
-            <img class="skill-level-icon" src="https://imgur.com/QhsbQBY.png" alt="">
-          </div>
-          <p *ngSwitchDefault>
-          </p>
-          <button class="btn user-button">
+          <div class="btn btn-primary mt-3">
             {{ instructor.name }}
-          </button>
-        </span>
-      </a>
-    </li>
-  </ul>
-  <h3> Users </h3>
-  <ul>
-    <li class="user-list" *ngFor="let user of users">
-      <a href="/user/{{user.id}}/lessons">
-        <span [ngSwitch]="user.level">
-          <div *ngSwitchCase="userLevel.Beginner">
-            <img class="skill-level-icon" src="https://imgur.com/whGTBlE.png" alt="">
           </div>
-          <div *ngSwitchCase="userLevel.Intermediate">
-            <img class="skill-level-icon" src="https://imgur.com/SXE1jMx.png" alt="">
-          </div>
-          <div *ngSwitchCase="userLevel.Advanced">
-            <img class="skill-level-icon" src="https://imgur.com/tZ17gXI.png" alt="">
-          </div>
-          <div *ngSwitchCase="userLevel.Expert">
-            <img class="skill-level-icon" src="https://imgur.com/QhsbQBY.png" alt="">
-          </div>
-          <div *ngSwitchDefault>
-          </div>
-          <button class="btn user-button">
-            {{ user.name }}
-          </button>
-        </span>
-      </a>
-    </li>
-    <!-- </div> -->
-  </ul>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <hr>
+
+  <h3> Users </h3>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-1" *ngFor="let user of users">
+        <a href="/user/{{user.id}}/lessons">
+          <div [ngSwitch]="user.level">
+            <img *ngSwitchCase="userLevel.Beginner" class="img-fluid" src="https://imgur.com/whGTBlE.png" alt="">
+            <img *ngSwitchCase="userLevel.Intermediate" class="img-fluid" src="https://imgur.com/SXE1jMx.png" alt="">
+            <img *ngSwitchCase="userLevel.Advanced" class="img-fluid" src="https://imgur.com/tZ17gXI.png" alt="">
+            <img *ngSwitchCase="userLevel.Expert" class="img-fluid" src="https://imgur.com/QhsbQBY.png" alt="">
+          </div>
+          <div class="btn btn-primary mt-3">
+            {{ user.name }}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <div style="margin: 10px;">
     <!-- <app-lessons></app-lessons> -->
     <router-outlet #outlet="outlet"> </router-outlet>
