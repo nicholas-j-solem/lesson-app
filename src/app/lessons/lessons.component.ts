@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Lesson } from '../lesson';
 import { state, style, transition, animate } from '@angular/animations';
 import { log } from 'util';
@@ -17,8 +17,11 @@ export class LessonsComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
+    router.events.subscribe(() => this.fetchLessons());
+  }
 
   ngOnInit() {
     this.fetchLessons();

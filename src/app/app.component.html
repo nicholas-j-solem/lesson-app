@@ -5,7 +5,7 @@
   <h3> Instructors </h3>
   <div class="row">
     <div class="col-1" *ngFor="let instructor of instructors">
-      <a href="/instructor/{{instructor.id}}/lessons">
+      <a routerLink="/instructor/{{instructor.id}}/lessons">
         <div [ngSwitch]="instructor.level">
           <img *ngSwitchCase="userLevel.Beginner" class="img-fluid" src="https://imgur.com/whGTBlE.png" alt="">
           <img *ngSwitchCase="userLevel.Intermediate" class="img-fluid" src="https://imgur.com/SXE1jMx.png" alt="">
@@ -24,7 +24,7 @@
   <h3> Users </h3>
   <div class="row">
     <div class="col-1" *ngFor="let user of users">
-      <a href="/user/{{user.id}}/lessons">
+      <a routerLink="/user/{{user.id}}/lessons">
         <div [ngSwitch]="user.level">
           <img *ngSwitchCase="userLevel.Beginner" class="img-fluid" src="https://imgur.com/whGTBlE.png" alt="">
           <img *ngSwitchCase="userLevel.Intermediate" class="img-fluid" src="https://imgur.com/SXE1jMx.png" alt="">
