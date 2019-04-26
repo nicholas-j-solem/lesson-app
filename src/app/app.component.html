@@ -1,25 +1,45 @@
-<h1> Select from dropdown to become user </h1>
+<div class="container-fluid">
+  <img class="mt-5" id="banner" src="https://imgur.com/7nx905t.png">
+  <h2> Select from list to become user </h2>
 
-<h3> Instructors </h3>
-<ul>
-  <li *ngFor="let instructor of instructors">
-    <a href="/instructor/{{instructor.id}}/lessons">
-      {{ instructor.name }}
-    </a>
-  </li>
-</ul>
+  <h3> Instructors </h3>
+  <div class="row">
+    <div class="col-1" *ngFor="let instructor of instructors">
+      <a href="/instructor/{{instructor.id}}/lessons">
+        <div [ngSwitch]="instructor.level">
+          <img *ngSwitchCase="userLevel.Beginner" class="img-fluid" src="https://imgur.com/whGTBlE.png" alt="">
+          <img *ngSwitchCase="userLevel.Intermediate" class="img-fluid" src="https://imgur.com/SXE1jMx.png" alt="">
+          <img *ngSwitchCase="userLevel.Advanced" class="img-fluid" src="https://imgur.com/tZ17gXI.png" alt="">
+          <img *ngSwitchCase="userLevel.Expert" class="img-fluid" src="https://imgur.com/QhsbQBY.png" alt="">
+        </div>
+        <div class="btn btn-primary mt-3">
+          {{ instructor.name }}
+        </div>
+      </a>
+    </div>
+  </div>
 
-<h3> Users </h3>
-<ul>
-  <li *ngFor="let user of users">
-    <a href="/user/{{user.id}}/lessons">
-      {{ user.name }}
-    </a>
-  </li>
-</ul>
+  <hr>
 
-<hr>
-<div style="margin: 10px;">
-<!-- <app-lessons></app-lessons> -->
-<router-outlet> </router-outlet>
+  <h3> Users </h3>
+  <div class="row">
+    <div class="col-1" *ngFor="let user of users">
+      <a href="/user/{{user.id}}/lessons">
+        <div [ngSwitch]="user.level">
+          <img *ngSwitchCase="userLevel.Beginner" class="img-fluid" src="https://imgur.com/whGTBlE.png" alt="">
+          <img *ngSwitchCase="userLevel.Intermediate" class="img-fluid" src="https://imgur.com/SXE1jMx.png" alt="">
+          <img *ngSwitchCase="userLevel.Advanced" class="img-fluid" src="https://imgur.com/tZ17gXI.png" alt="">
+          <img *ngSwitchCase="userLevel.Expert" class="img-fluid" src="https://imgur.com/QhsbQBY.png" alt="">
+        </div>
+        <div class="btn btn-primary mt-3">
+          {{ user.name }}
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div style="margin: 10px;">
+    <!-- <app-lessons></app-lessons> -->
+    <router-outlet #outlet="outlet"> </router-outlet>
+  </div>
 </div>
