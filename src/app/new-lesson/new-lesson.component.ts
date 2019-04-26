@@ -1,6 +1,6 @@
 import { Component, OnInit, NgModule, EventEmitter, Output, Input } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Lesson } from '../lesson';
 import { User, UserLevel, UserType } from '../user';
 import { style, state, trigger, transition, animate, sequence } from '@angular/animations';
@@ -59,8 +59,11 @@ export class NewLessonComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
+    router.events.subscribe(() => this.group = this.route.snapshot.params['group']);
+  }
 
   lesson_id: number;
   lesson_name: string;
@@ -72,7 +75,6 @@ export class NewLessonComponent implements OnInit {
     this.students = this.dataService.getUsers();
     this.instructors = this.dataService.getInstructors();
     this.group = this.route.snapshot.params['group'];
-
   }
 
   toggleForm() {
