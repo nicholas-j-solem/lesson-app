@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, EventEmitter, Output, Input } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lesson } from '../lesson';
@@ -47,6 +47,7 @@ import { style, state, trigger, transition, animate, sequence } from '@angular/a
   ]
 })
 export class NewLessonComponent implements OnInit {
+  @Output() newLessonAdded = new EventEmitter<Event>();
 
   group: string;
   userLevel = UserLevel;
@@ -60,8 +61,6 @@ export class NewLessonComponent implements OnInit {
     private dataService: DataService,
     private route: ActivatedRoute
   ) { }
-
-
 
   lesson_id: number;
   lesson_name: string;
@@ -87,8 +86,7 @@ export class NewLessonComponent implements OnInit {
     return this.lesson_start_time < this.lesson_end_time;
   }
   newLesson() {
-    if (this.validateLessonName() && this.validateLessonTime())
-    {
+    if (this.validateLessonName() && this.validateLessonTime()) {
       let u_id = this.route.snapshot.params['id'];
 
       let newLesson = new Lesson();
@@ -108,6 +106,7 @@ export class NewLessonComponent implements OnInit {
 
       this.dataService.addLesson(newLesson.id, newLesson.name, newLesson.user_id, newLesson.instructor_id, newLesson.start_time, newLesson.end_time);
       console.log(this.dataService.getLessons());
+      this.newLessonAdded.emit(event);
     }
   }
 

@@ -1,5 +1,9 @@
-<app-new-lesson>
+<app-new-lesson
+  (newLessonAdded)="newLessonAdded($event)"
+>
 </app-new-lesson>
 <hr/>
-<app-calendar-view>
+<app-calendar-view
+  [lessons]="lessons"
+>
 </app-calendar-view>

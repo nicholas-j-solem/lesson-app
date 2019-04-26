@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lesson } from '../lesson';
 import { state, style, transition, animate } from '@angular/animations';
+import { log } from 'util';
 @Component({
   selector: 'app-lessons',
   templateUrl: './lessons.component.html',
@@ -20,6 +21,10 @@ export class LessonsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.fetchLessons();
+  }
+
+  fetchLessons() {
     this.id = this.route.snapshot.params['id'];
     this.group = this.route.snapshot.params['group'];
     if (this.group == 'instructor') {
@@ -28,7 +33,12 @@ export class LessonsComponent implements OnInit {
       this.lessons = this.dataService.getLessonsForUserId(this.id);
     }
   }
-  ToggleCalendar(){
+
+  newLessonAdded() {
+    this.fetchLessons();
+  }
+
+  ToggleCalendar() {
     this.calendarActive = !this.calendarActive;
   }
 }

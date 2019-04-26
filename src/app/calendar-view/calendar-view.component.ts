@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,27 +11,15 @@ import { trigger } from '@angular/animations';
   styleUrls: ['./calendar-view.component.css'],
 })
 export class CalendarViewComponent implements OnInit {
+  @Input() lessons: Lesson[];
   instructor: User;
   id: number;
-  lessons: Lesson[];
   my_percentage: number = 100;
 
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute
   ) { }
-
-  ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
-
-    let group = this.route.snapshot.url[0].path;
-
-    if (group == 'instructor') {
-      this.lessons = this.dataService.getLessonsForInstructorId(this.id);
-    } else if (group == 'user') {
-      this.lessons = this.dataService.getLessonsForUserId(this.id);
-    }
-  }
 
   timeDisplay(time: number) {
     return (time % 12 == 0 ? 12 : time % 12) + (time < 12 ? 'am' : 'pm')
