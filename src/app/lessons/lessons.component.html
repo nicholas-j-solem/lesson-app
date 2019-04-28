@@ -1,9 +1,8 @@
-<app-new-lesson
-  (newLessonAdded)="newLessonAdded($event)"
->
+<app-new-lesson (newLessonAdded)="newLessonAdded($event)">
 </app-new-lesson>
-<hr/>
-<app-calendar-view
-  [lessons]="lessons"
->
+<hr />
+<h3 *ngIf="getUserName() != ''; else ''">
+  {{getUserName()}}'s Lesson Schedule
+</h3>
+<app-calendar-view [lessons]="lessons">
 </app-calendar-view>

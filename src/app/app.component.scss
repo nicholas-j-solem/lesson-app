@@ -7,6 +7,9 @@
 
 .user-list {
   flex-grow: inherit;
+  float: left;
+  box-align: center;
+  align-content: center;
   border-radius: 10px;
   width: 10%;
   list-style-type: none;
@@ -18,24 +21,32 @@
 }
 
 .user-button {
+  text-align: center;
   margin-top: .2em;
   background-color: rgb(65, 153, 225);
   font-weight: bold;
   color: white;
   fill-opacity: 60%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .user-button:hover {
   background-color: rgb(49, 119, 175);
 }
-
 .user-button:active {
-  background-color: rgb(49, 119, 175);
+  background-color: rgb(17, 47, 71);
 }
 
 h2 {
   color: white;
   text-shadow: -1px 0 rgb(88, 88, 88), 0 1px rgb(88, 88, 88), 1px 0 rgb(88, 88, 88), 0 -1px rgb(88, 88, 88);
 
+}
+.img-fluid{
+  box-align: center;
+  min-width: 2em;
+  }
+.col-2{
+align-items: center;
+text-align: center;
 }

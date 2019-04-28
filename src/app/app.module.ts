@@ -10,13 +10,15 @@ import { LessonsComponent } from './lessons/lessons.component';
 import { NewLessonComponent } from './new-lesson/new-lesson.component';
 import {FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LessonDetailsComponent } from './lesson-details/lesson-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarViewComponent,
     LessonsComponent,
-    NewLessonComponent
+    NewLessonComponent,
+    LessonDetailsComponent
   ],
   imports: [
     BrowserModule,

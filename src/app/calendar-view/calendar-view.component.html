@@ -9,18 +9,19 @@
     <li class="time-label">2:00 pm</li>
     <li class="time-label">3:00 pm</li>
     <li class="time-label">4:00 pm</li>
-    <li class="time-label">5:00 pm</li>
+    <li class="time-label last-item">5:00 pm</li>
   </ul>
 
   <div class="row" *ngFor="let lesson of lessons" style="padding: 0 20px;">
-    <div [ngStyle]="{'width': ((lesson.start_time - 8) * (100 / (10))) + '%', height: '20px'}"> </div>
+    <div [ngStyle]="{'width': ((lesson.start_time - 8) * 10) + '%', height: '20px'}"> </div>
 
-    <div [ngStyle]="{'width': ((lesson.end_time - lesson.start_time) * (100 / (10))) + '%'}">
-      <div class="alert alert-primary" role="alert">
-        Lesson: {{ lesson.name }}
-        ({{ timeDisplay(lesson.start_time) }}
-        - {{ timeDisplay(lesson.end_time) }})
-      </div>
+    <div [ngStyle]="{'width': ((lesson.end_time - lesson.start_time) * 10) + '%'}">
+        <div class="alert alert-primary" role="alert">
+          Lesson: {{ lesson.name }}
+          ({{ timeDisplay(lesson.start_time) }}
+          - {{ timeDisplay(lesson.end_time) }})
+        </div>
     </div>
   </div>
 </div>
+<app-lesson-details></app-lesson-details>

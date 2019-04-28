@@ -15,6 +15,9 @@ ul{ list-style: none;}
     font-weight: bolder;
     text-align: center;
 }
+.time-label.last-item{
+border-right: none;
+}
 .wrapper{
     background-color: var(--primary);
     height: 100%;

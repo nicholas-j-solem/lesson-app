@@ -8,7 +8,7 @@ import { style, state, trigger, transition, animate, sequence } from '@angular/a
 @Component({
   selector: 'app-new-lesson',
   templateUrl: './new-lesson.component.html',
-  styleUrls: ['./new-lesson.component.css'],
+  styleUrls: ['./new-lesson.component.scss'],
   animations: [
     trigger('showCalendar', [
       state('closed', style({
@@ -77,7 +77,7 @@ export class NewLessonComponent implements OnInit {
 
   toggleForm() {
     this.showForm = !this.showForm;
-    this.message = this.showForm ? "Close" : "Add a New Lesson";
+    this.message = this.showForm ? 'Close' : 'Add a New Lesson';
   }
   validateLessonName(): boolean {
     return this.lesson_name !== '';

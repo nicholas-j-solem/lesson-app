@@ -1,7 +1,15 @@
 <div class="container-fluid">
   <img class="mt-5" id="banner" src="https://imgur.com/7nx905t.png">
   <h2 class="ml-5"> Select from list to become user </h2>
-  
+<div class="dropdown dropdown-filter">
+  <button id="my-dropdown" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</button>
+  <div class="dropdown-menu" aria-labelledby="my-dropdown">
+    <a class="dropdown-item active" href="">Beginner</a>
+    <a class="dropdown-item" href="">Intermediate</a>
+    <a class="dropdown-item" href="">Advanced</a>
+    <a class="dropdown-item" href="">Expert</a>
+  </div>
+  </div>
   <div class="row">
     <div class="col-6">
       <h3> Instructors </h3>
@@ -14,7 +22,7 @@
               <img *ngSwitchCase="userLevel.Advanced" class="img-fluid" src="https://imgur.com/tZ17gXI.png" alt="">
               <img *ngSwitchCase="userLevel.Expert" class="img-fluid" src="https://imgur.com/QhsbQBY.png" alt="">
             </div>
-            <div class="btn btn-primary mt-3">
+            <div class="btn btn-primary mt-3" id="user-btn">
               {{ instructor.name }}
             </div>
           </a>
@@ -44,6 +52,6 @@
 
   <div style="margin: 10px;">
     <!-- <app-lessons></app-lessons> -->
-    <router-outlet #outlet="outlet"> </router-outlet>
+<router-outlet #outlet="outlet"> </router-outlet>
   </div>
 </div>
